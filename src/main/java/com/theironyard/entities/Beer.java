@@ -15,12 +15,22 @@ public class Beer {
     @Column(nullable = false)
     public String name;
 
+    public Beer() {
+    }
+
     @Column(nullable = false)
     public String type;
 
     @Column(nullable = false)
     public Integer calories;
 
-    @OneToMany
+    @ManyToOne
     public User user;
+
+    public Beer(String name, String type, Integer calories, User user) {
+        this.name = name;
+        this.type = type;
+        this.calories = calories;
+        this.user = user;
+    }
 }

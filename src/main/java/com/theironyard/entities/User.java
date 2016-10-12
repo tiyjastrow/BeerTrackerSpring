@@ -1,7 +1,5 @@
 package com.theironyard.entities;
 
-import com.sun.tools.javac.util.List;
-
 import javax.persistence.*;
 
 /**
@@ -10,6 +8,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
+    public User() {
+    }
+
     @Id
     @GeneratedValue
     Integer id;
@@ -19,4 +20,9 @@ public class User {
 
     @Column(nullable = false)
     public String password;
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 }
